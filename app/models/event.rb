@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 	include ActiveModel::Validations
 
+	belongs_to :user
 	validates :start_date, :duration, :location, presence: true
   validates :title, length: { in: 20..1000 }
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 1000  }
