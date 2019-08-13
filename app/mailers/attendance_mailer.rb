@@ -1,5 +1,5 @@
 class AttendanceMailer < ApplicationMailer
-	default from: 'no-reply@the-majestical-eventbrite-app.herokuapp.com'
+	default from: 'no-reply@the-majestical-eventbrite.herokuapp.com'
  
   def attendance_confirmation_email(attendance)
     #on récupère le user de l'instance attendance pour ensuite pouvoir la passer à la view en @user
@@ -9,7 +9,7 @@ class AttendanceMailer < ApplicationMailer
     @event = attendance.event
 
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
-    @url  = 'http://the-majestical-eventbrite-app.herokuapp.com/login' 
+    @url  = 'http://the-majestical-eventbrite.herokuapp.com/login' 
 
 
 

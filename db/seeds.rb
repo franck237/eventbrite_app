@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+#User.destroy_all
 
 #Création de 10 utilisateurs aléatoires portant chacun une des villes précedemment crées en argument foreign key
 	random_user_list = []
