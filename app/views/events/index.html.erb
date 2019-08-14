@@ -1,2 +1,30 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<br/>
+<br/>
+<div class="jumbotron jumbotron-fluid" style="background-color:#FEF4F7">
+  <div class="container">
+    <h1 class="display-5" style="color:#7146B2">💫 Bienvenue sur la page d'accueil de Majestical Eventbrite 💫</h1>
+    <p class="text-center">Tu trouveras ci dessous la liste des derniers évènements en vogue 👀</p>
+  </div>
+</div>
+
+  <!-- Ajout de la fonctionnalité qui permet d'ajouter une alerte au user-->
+  <% if flash[:alert] != nil %>
+    <div class='alert alert-success mt-4'>
+      <%= flash[:alert] %>
+    </div>
+    <% end %>
+
+
+<% @events_list.each.with_index(1) do |event| %>
+ 	<div class="card-deck" style="margin-left: 15px; margin-right: 15px">
+ 	<div class="card" style="width: 18rem;">
+  	<div class="card-body">
+    	<h5 class="card-title">Event n° <%= event.id %> - "<%= event.title %>"</h5>
+    	<h6 class="card-subtitle mb-2 text-muted">Lieu : <%= event.location %> - Cet évènement est organisé : <%= event.user.first_name %></h6>
+    	<p class="card-text"><%= event.description %></p>
+   	 <a href="<%= event_path(event.id) %>" class="card-link"> Cliquez pour plus d'infos: </a>
+ 		</div>
+ 		</div>
+	</div>
+<br/>
+<% end %>
